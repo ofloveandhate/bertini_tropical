@@ -1,0 +1,9 @@
+*.eps
+*.mat
+*.out
+
+html/
+info.xml
+helptoc.xml
+Contents.m
+
