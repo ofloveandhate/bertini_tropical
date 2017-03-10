@@ -75,8 +75,9 @@ line_number = 1; %initialize the counter for lines.
 %sections, and help us tell whether an input file is valid.
 finished_input = false;
 finished_config = false;
+started = false;
 in_config = false;
-in_input = false;
+in_input = true;
 
 b_input.filename = filename;
 
@@ -150,7 +151,7 @@ while ~(finished_input || line_number > num_lines)
 	
 	if strcmp(totalline,'CONFIG')
 		
-		if in_input
+		if in_input && started
 			warning('beginning config while in INPUT section, around line %i',line_number);
 			acceptable_input = false;
 		end
@@ -190,6 +191,7 @@ while ~(finished_input || line_number > num_lines)
 		
 		in_input = true;
 		in_config = false;
+		started = true;
 		continue
 	end
 	
@@ -348,7 +350,7 @@ end
 
 
 if isnan(last_line_of_file)
-	warning('finished reading file, but INPUT never reached END;');
+% 	warning('finished reading file, but INPUT never reached END;');
 end
 
 
