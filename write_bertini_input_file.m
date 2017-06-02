@@ -60,10 +60,12 @@
 %  please inform the author immediately if this code doesn't do what you
 %  think it should do.  
 %
-% copyright 2015, 2016 Daniel Brake
+% copyright 2015, 2016, 2017 Dani Brake
 % University of Notre Dame
 % Applied and Computational Mathematics and Statistics
-% danielthebrake@gmail.com
+% University of Wisconsin
+% Mathematics
+% danielthebrake@gmail.com  brakeda@uwec.edu
 %
 %  Bertini (TM) is a registered trademark.
 %
