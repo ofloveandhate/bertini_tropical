@@ -10,6 +10,7 @@
 % use.  This of course requires MPI to be installed on your machine.
 % * 'stifle' -- Redirects the screen output to a named file, automatically
 % named as the time of the run.
+% * 'nostifle' -- Turns off redirecting of screen output.
 % * 'startname' -- The name of the start file to use, if needed.
 % * 'filename' -- The name of the input file.
 % * 'showcommand' -- Display the system command before calling it.
@@ -19,10 +20,12 @@
 % the scene in Bertini which can influence the outcome of the run, for
 % better or for worse.
 %
-% copyright 2015, 2016 Daniel Brake
+% copyright 2015, 2016, 2017 Dani Brake
 % University of Notre Dame
 % Applied and Computational Mathematics and Statistics
-% danielthebrake@gmail.com
+% University of Wisconsin, Eau Claire
+% Mathematics
+% danielthebrake@gmail.com brakeda@uwec.edu
 %
 %  Bertini (TM) is a registered trademark.
 %
@@ -73,6 +76,9 @@ while ii<=length(varargin)
 		case 'stifle'
 			stifletext = '> /dev/null';
 % 			stifletext = sprintf('> run_results_%s',datestr(now,'yymmddHHMMSSfff'));
+		
+		case 'nostifle'
+			stifletext = '';
 			
 		case 'startname'
 			startfile = varargin{ii+1};
