@@ -34,7 +34,7 @@ fig = gcf;
 
 fontsize = 18;
 
-vec = this.vectors;
+vec = this.rays;
 num_vec = size(vec,2);
 
 zer = zeros(1,num_vec);
@@ -130,7 +130,13 @@ if rendertext
 	title(char(this.system_name),'interpreter','none');
 end
 
-render_into_file([ this.system_name '_real_tropical_curve'] )
+w.resolution = 150;
+w.autoname = true;
+w.format = 'eps';
+w.format_flag = 'epsc2';
+w.basename = [ this.system_name '_real_tropical_curve'];
+
+render_into_file(w);
 
 
 
